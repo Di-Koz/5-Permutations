@@ -25,8 +25,8 @@ int countDlina(string str) {
 	}
 	return word;
 }
-//заполнение массива, даже с учетом того, что в строке могут быть не
-//однозначные числа
+//Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР°, РґР°Р¶Рµ СЃ СѓС‡РµС‚РѕРј С‚РѕРіРѕ, С‡С‚Рѕ РІ СЃС‚СЂРѕРєРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РЅРµ
+//РѕРґРЅРѕР·РЅР°С‡РЅС‹Рµ С‡РёСЃР»Р°
 void fillMas(string str, int* arr) {
 	int lenght = str.size(), ind{ 0 };
 
@@ -61,7 +61,7 @@ bool isNextPerest(int* arr, int dlina) {
 	}
 	return false;
 }
-//поиск наименьшего из чисел, которые больше числа
+//РїРѕРёСЃРє РЅР°РёРјРµРЅСЊС€РµРіРѕ РёР· С‡РёСЃРµР», РєРѕС‚РѕСЂС‹Рµ Р±РѕР»СЊС€Рµ С‡РёСЃР»Р°
 int findIndMinOfBigger(int indL, int indR, int* arr, int dlina) {
 	int ch{ arr[indL] }, ch2{ arr[indR] }, indMOB{ indR };
 	for (int i{ indR + 1 }; i < dlina; ++i) {
@@ -73,7 +73,7 @@ int findIndMinOfBigger(int indL, int indR, int* arr, int dlina) {
 	//cout << ch2 << endl;
 	return indMOB;
 }
-//инвертация
+//РёРЅРІРµСЂС‚Р°С†РёСЏ
 void invert(int* arr, int indR, int dlina) {
 	int* zapasMas = new int[dlina - indR], ind{ 0 };
 
