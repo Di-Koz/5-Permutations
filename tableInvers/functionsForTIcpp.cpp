@@ -89,20 +89,18 @@ int findMax(int* arr, int dlina) {
 	}
 	return max;
 }
-
+//создание перестановки по таблице инверсий
 string createPerest(int nachEl, int* tableInvers, int dlina) {
 	string perestStroka{ "" };
 	int* perest = new int[dlina] {0};
 
 	for (int i{ dlina - 1 }; i >= 0; --i) {
 		int indVstavka = tableInvers[i];
-		if (isEmpty(indVstavka, perest)) {
-			perest[indVstavka] = nachEl;
-		}
-		else {
+		//если место не пустое, то надо сдвинуть елементы, а потом вставить
+		if (!isEmpty(indVstavka, perest)) {
 			sdvigToRight(perest, indVstavka, dlina);
-			perest[indVstavka] = nachEl;
 		}
+		perest[indVstavka] = nachEl;
 		--nachEl;
 	}
 	for (int i{ 0 }; i < dlina; ++i) {
