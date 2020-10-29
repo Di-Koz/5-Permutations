@@ -15,7 +15,7 @@ int main() {
 	for (int i{ 0 }; i < size; ++i) {
 		cout << perest[i] << " ";
 	}
-	//ñîçäàíèå òàáëèöû èíâåðñèé
+	//ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ Ð¸Ð½Ð²ÐµÑ€ÑÐ¸Ð¹
 	for (int i{ 0 }; i < size; ++i) {
 		int indInInvers = perest[i] - 1;
 		int kolvoInvers = findNumInvers(perest, i);
