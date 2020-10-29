@@ -25,8 +25,8 @@ int countDlina(string str) {
 	}
 	return word;
 }
-//заполнение массива, даже с учетом того, что в строке могут быть не
-//однозначные числа
+//Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР°, РґР°Р¶Рµ СЃ СѓС‡РµС‚РѕРј С‚РѕРіРѕ, С‡С‚Рѕ РІ СЃС‚СЂРѕРєРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РЅРµ
+//РѕРґРЅРѕР·РЅР°С‡РЅС‹Рµ С‡РёСЃР»Р°
 void fillMas(string str, char* arr) {
 	int lenght = str.size(), ind{ 0 };
 
@@ -46,7 +46,7 @@ bool isNextPerest(char* arr, int dlina) {
 	}
 	return false;
 }
-//поиск наименьшего из чисел, которые больше числа
+//РїРѕРёСЃРє РЅР°РёРјРµРЅСЊС€РµРіРѕ РёР· С‡РёСЃРµР», РєРѕС‚РѕСЂС‹Рµ Р±РѕР»СЊС€Рµ С‡РёСЃР»Р°
 int findIndMinOfBigger(int indL, int indR, char* arr, int dlina) {
 	int ch{ arr[indL] }, ch2{ arr[indR] }, indMOB{ indR };
 	for (int i{ indR + 1 }; i < dlina; ++i) {
@@ -58,7 +58,7 @@ int findIndMinOfBigger(int indL, int indR, char* arr, int dlina) {
 	//cout << ch2 << endl;
 	return indMOB;
 }
-//инвертация
+//РёРЅРІРµСЂС‚Р°С†РёСЏ
 void invert(char* arr, int indR, int dlina) {
 	char* zapasMas = new char[dlina - indR], ind{ 0 };
 
@@ -99,10 +99,10 @@ string createNewPerest(char* perest, int dlina) {
 	}
 	cout << endl;*/
 
-	//присваивание массива символов строке и удаление оттуда всего лишнего
+	//РїСЂРёСЃРІР°РёРІР°РЅРёРµ РјР°СЃСЃРёРІР° СЃРёРјРІРѕР»РѕРІ СЃС‚СЂРѕРєРµ Рё СѓРґР°Р»РµРЅРёРµ РѕС‚С‚СѓРґР° РІСЃРµРіРѕ Р»РёС€РЅРµРіРѕ
 	newPerest = (const char*)perest;
 	newPerest.erase(dlina, newPerest.size() - dlina);
-	//расстановка пробелов
+	//СЂР°СЃСЃС‚Р°РЅРѕРІРєР° РїСЂРѕР±РµР»РѕРІ
 	for (int i{dlina}; i > 0; --i) {
 		newPerest.insert(i, 1, ' ');
 	}
