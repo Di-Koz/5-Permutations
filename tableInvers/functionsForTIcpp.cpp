@@ -25,8 +25,8 @@ int countDlina(string str) {
 	}
 	return word;
 }
-//заполнение массива, даже с учетом того, что в строке могут быть не
-//однозначные числа
+//Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР°, РґР°Р¶Рµ СЃ СѓС‡РµС‚РѕРј С‚РѕРіРѕ, С‡С‚Рѕ РІ СЃС‚СЂРѕРєРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РЅРµ
+//РѕРґРЅРѕР·РЅР°С‡РЅС‹Рµ С‡РёСЃР»Р°
 void fillMas(string str, int* arr) {
 	int lenght = str.size(), ind{ 0 };
 
@@ -52,7 +52,7 @@ void fillMas(string str, int* arr) {
 		i += step;
 	}
 }
-//поиск количества инверсий для числа под нужным индексом
+//РїРѕРёСЃРє РєРѕР»РёС‡РµСЃС‚РІР° РёРЅРІРµСЂСЃРёР№ РґР»СЏ С‡РёСЃР»Р° РїРѕРґ РЅСѓР¶РЅС‹Рј РёРЅРґРµРєСЃРѕРј
 int findNumInvers(int* arr, int ind) {
 	if (ind == 0) {
 		return 0;
@@ -89,14 +89,14 @@ int findMax(int* arr, int dlina) {
 	}
 	return max;
 }
-//создание перестановки по таблице инверсий
+//СЃРѕР·РґР°РЅРёРµ РїРµСЂРµСЃС‚Р°РЅРѕРІРєРё РїРѕ С‚Р°Р±Р»РёС†Рµ РёРЅРІРµСЂСЃРёР№
 string createPerest(int nachEl, int* tableInvers, int dlina) {
 	string perestStroka{ "" };
 	int* perest = new int[dlina] {0};
 
 	for (int i{ dlina - 1 }; i >= 0; --i) {
 		int indVstavka = tableInvers[i];
-		//если место не пустое, то надо сдвинуть елементы, а потом вставить
+		//РµСЃР»Рё РјРµСЃС‚Рѕ РЅРµ РїСѓСЃС‚РѕРµ, С‚Рѕ РЅР°РґРѕ СЃРґРІРёРЅСѓС‚СЊ РµР»РµРјРµРЅС‚С‹, Р° РїРѕС‚РѕРј РІСЃС‚Р°РІРёС‚СЊ
 		if (!isEmpty(indVstavka, perest)) {
 			sdvigToRight(perest, indVstavka, dlina);
 		}
